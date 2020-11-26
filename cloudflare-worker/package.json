@@ -1,0 +1,22 @@
+{
+	"name": "worker",
+	"version": "0.0.0",
+	"description": "cloudflare worker",
+	"main": "./dist/main.js",
+	"scripts": {
+		"dev": "concurrently \"yarn:dev:js\" \"yarn:dev:wrgl\" -k --restart-tries 5 --restart-after 1000",
+		"dev:js": "nodemon",
+		"build": "node ./scripts/build.js --minify",
+		"wrgl": "wrangler",
+		"wrgl:pub": "yarn build && wrangler publish",
+		"dev:wrgl": "wrangler dev"
+	},
+	"author": "Jan Schmidt <me@jnschmdt.de>",
+	"license": "MIT",
+	"devDependencies": {
+		"@cloudflare/workers-types": "^2.1.0",
+		"concurrently": "^5.3.0",
+		"esbuild": "^0.8.15",
+		"nodemon": "^2.0.6"
+	}
+}

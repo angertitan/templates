@@ -62,7 +62,6 @@ typings/
 .cache
 
 # Generated files
-generated
 lib
 dist
 
@@ -71,13 +70,19 @@ dist
 
 # Parcel cache
 .parcel-cache
-parcel-dev
+
 # Docker database folders
-postgres-data
-data
+postgres_data
+mariadb_data
+db_data
+
+# yarn v2
 .yarn/*
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+# cloudflare worker
+wrangler.toml
